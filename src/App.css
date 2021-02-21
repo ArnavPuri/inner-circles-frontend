@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    background: #faf6eb;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.center-aligned {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    padding: 8px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+    background: #d4d4d4;
+}
+
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #303030;
+    text-align: center;
+    background-color: #fcfcfc;
+    border: 1px solid black;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+input {
+    border: 1px solid black;
+
+    padding: 6px 12px;
+    border-radius: 0px;
+}
+
+.prefix-suffix input {
+    border-right: none;
+    border-left: none;
+}
+
+.prefix {
+    border-right: none;
+
+}
+
+.suffix {
+    border-left: none;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    margin: 12px 0;
+}
+
+.input-group input {
+    outline: none;
+}
+
+
+/* welcome page*/
+.app-main {
+    background-color: #faf6eb;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-top: 32px;
+}
+
+.subscriptions-list {
+    margin: 12px 18px 0 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+}
+
+
+.subscription-card {
+    display: flex;
+    margin: 24px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 222, 144, 0.82);
+    padding: 32px;
+    border-bottom-left-radius: 38px;
+    border-top-left-radius: 41px;
+    border-top-right-radius: 51px;
+    border-bottom-right-radius: 28px;
+    color: #3c3939;
+    min-height: 160px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px #aeaeae;
+    transition: 200ms all ease-in;
+}
+
+.subscription-card:hover {
+    box-shadow: 4px 6px 4px #aeaeae;
+}
+
+.subscription-card .title {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.sub-count {
+    font-weight: bold;
+}
+
+/* message screen*/
+.list-screen {
+    justify-content: start;
+    height: 100%;
+    padding-top: 32px;
+}
+
+.messages-list {
+    margin-top: 32px;
+}
+
+.message-card {
+    background: white;
+    padding: 24px;
+    border-radius: 26px;
+}
+
+.message-card h3 {
+    margin-bottom: 8px;
+}
+
+.message-card p {
+    margin: 12px 0;
+}
+
+.bullet-list-container {
+    text-align: start;
+    font-weight: bold;
+}
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bullet-list li {
+    font-weight: normal;
+    text-align: start;
+    font-size: 16px;
+    margin-top: 6px;
+    padding-left: 1rem;
+    text-indent: -0.7rem;
+}
+
+.bullet-list li::before {
+    content: "👉 ";
+}
+
+/* message reaction */
+.message-reaction {
+    background-color: hsla(0, 0%, 100%, 0.04);
+    padding: 0.075rem 0.475rem;
+    margin-right: 0.4rem;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.message-reaction-emoji {
+    margin: 3px 0;
+    margin-right: 0.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.message-emoji-count{
+    margin: 3px 0;
+}
+.message-reaction-twemoji {
+    height: 1.5rem;
+    width: 1.5rem;
+
+}
+
+.message-reaction-clicked {
+    background-color: rgba(255, 222, 144, 0.3);
+    color: #daab30;
+}
+
+.discordembed {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.emoji-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.emoji-container {
+    margin-top: 3px;
+    display: flex;
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
